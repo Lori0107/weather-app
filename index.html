@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body ng-app="weather-app">
+    <div class="container weather" ng-controller="weather-controller">
+      <div class="row">
+        <div class="offset-xs-3 col-xs-6 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4">
+          <div class="weather-card">
+            <p class="weather-card__content-temperature">{{apparentTemperature | number: 0}}°</p>
+            <p class="weather-card__content-summary">{{summary}} in {{city}}</p>
+            <p class="weather-card__content-hour">{{hours}}:{{minutes}}</p>
+            <div class="" ng-show="icon == 'clear-day'">
+              <img src="./img/clear-day.png" alt="clear">
+            </div>
+            <div class="" ng-show="icon == 'clear-night'">
+              <img src="./img/clear-night.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'cloudy'">
+              <img src="./img/cloudy.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'partly-cloudy-day'">
+              <img src="./img/partly-cloudy-day.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'partly-cloudy-night'">
+              <img src="./img/partly-cloudy-night.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'rain'">
+              <img src="./img/rain.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'snow'">
+              <img src="./img/snow.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'wind'">
+              <img src="./img/wind.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'fog'">
+              <img src="./img/wind.png" alt="">
+            </div>
+            <div class="" ng-show="icon == 'sleet'">
+              <img src="./img/snow.png" alt="">
+            </div>
+            <p><button class="btn btn-danger weather-card__btn" type="buttton" data-toggle="collapse" href="#details" aria-expanded="true" aria-controls="details">more details</button></p>
+            <div class="weather-card__details" id="details">
+              <p class="weather-card__content"><span class="weather-card__content__font">Highest temperature</span><br>
+                 {{temperatureHigh| number: 0}}°</p>
+              <p class="weather-card__content"><span class="weather-card__content__font">Lowest temperature</span><br>
+                 {{temperatureLow| number: 0}}°</p>
+              <p class="weather-card__content"><span class="weather-card__content__font">Indice of humidity</span><br>
+                 {{humidity}}%</p>
+              <p class="weather-card__content"><span class="weather-card__content__font">Indice of precipitation</span><br>
+                 {{precipitation}}%</p>
+              <p class="weather-card__content"><span class="weather-card__content__font">Wind speed</span><br>
+                 {{windSpeed}} km/h</p>
+            </div>
+
+            <div class="weather-card__day--div">
+              <div class="weather-card__day" ng-repeat='x in eachHour'>
+                <p class="weather-card__day--p">{{x.time * 1000 | date:'HH'}}h</p><br>
+                <p>{{x.apparentTemperature| number: 0}}°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+  </body>
+</html>
