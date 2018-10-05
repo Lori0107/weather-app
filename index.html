@@ -13,42 +13,69 @@
   </head>
 
   <body ng-app="weather-app">
-    <div class="container weather" ng-controller="weather-controller">
+    <div class="container-weather" ng-controller="weather-controller">
       <div class="row">
         <div class="offset-xs-3 col-xs-6 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-lg-4 col-lg-4 offset-xl-4 col-xl-4">
           <div class="weather-card">
             <p class="weather-card__content-temperature">{{apparentTemperature | number: 0}}°</p>
             <p class="weather-card__content-summary">{{summary}} in {{city}}</p>
             <p class="weather-card__content-hour">{{hours}}:{{minutes}}</p>
-            <div class="" ng-show="icon == 'clear-day'">
+            <div class="" ng-show="icon == '01d'">
               <img src="./img/clear-day.png" alt="clear">
             </div>
-            <div class="" ng-show="icon == 'clear-night'">
+            <div class="" ng-show="icon == '01n'">
               <img src="./img/clear-night.png" alt="">
             </div>
-            <div class="" ng-show="icon == 'cloudy'">
-              <img src="./img/cloudy.png" alt="">
-            </div>
-            <div class="" ng-show="icon == 'partly-cloudy-day'">
+            <div class="" ng-show="icon == '02d'">
               <img src="./img/partly-cloudy-day.png" alt="">
             </div>
-            <div class="" ng-show="icon == 'partly-cloudy-night'">
+            <div class="" ng-show="icon == '02n'">
               <img src="./img/partly-cloudy-night.png" alt="">
             </div>
-            <div class="" ng-show="icon == 'rain'">
+            <div class="" ng-show="icon == '03d'">
+              <img src="./img/cloudy.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '03n'">
+              <img src="./img/cloudy.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '04d'">
+              <img src="./img/cloudy.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '04n'">
+              <img src="./img/cloudy.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '09d'">
+              <img src="./img/rain.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '09n'">
               <img src="./img/rain.png" alt="">
             </div>
             <div class="" ng-show="icon == 'snow'">
               <img src="./img/snow.png" alt="">
             </div>
-            <div class="" ng-show="icon == 'wind'">
-              <img src="./img/wind.png" alt="">
+            <div class="" ng-show="icon == '10d'">
+              <img src="./img/sunny-day.png" alt="">
             </div>
-            <div class="" ng-show="icon == 'fog'">
-              <img src="./img/wind.png" alt="">
+            <div class="" ng-show="icon == '10n'">
+              <img src="./img/night-rain.png" alt="">
             </div>
-            <div class="" ng-show="icon == 'sleet'">
+            <div class="" ng-show="icon == '11d'">
+              <img src="./img/storm.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '11n'">
+              <img src="./img/storm.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '13d'">
               <img src="./img/snow.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '13n'">
+              <img src="./img/snow.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '50d'">
+              <img src="./img/fog.png" alt="">
+            </div>
+            <div class="" ng-show="icon == '50n'">
+              <img src="./img/fog.png" alt="">
             </div>
             <p><button class="btn btn-danger weather-card__btn" type="buttton" data-toggle="collapse" href="#details" aria-expanded="true" aria-controls="details">more details</button></p>
             <div class="weather-card__details" id="details">
@@ -64,17 +91,16 @@
                  {{windSpeed}} km/h</p>
             </div>
 
-            <div class="weather-card__day--div">
+            <!-- <div class="weather-card__day--div">
               <div class="weather-card__day" ng-repeat='x in eachHour'>
                 <p class="weather-card__day--p">{{x.time * 1000 | date:'HH'}}h</p><br>
                 <p>{{x.apparentTemperature| number: 0}}°</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
