@@ -1,15 +1,24 @@
 body {
-  background-color: #e3e4e6 !important;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background: #e0eafc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #e0eafc, #cfdef3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
 }
 .weather-card {
   text-align: center;
-  border: none;
+  border: 0.5px solid #cfdef3;
   border-radius: 5px;
   padding: 8%;
   margin: 10% 0;
-  background-color: #88c5cc;
-  color: white;
+  /* background-color: #88c5cc; */
+  background-color: white;
+  color: black;
   overflow: hidden;
+  -webkit-box-shadow: 1px 16px 20px -7px rgba(166,166,166,0.82);
+  -moz-box-shadow: 1px 16px 20px -7px rgba(166,166,166,0.82);
+  box-shadow: 1px 16px 20px -7px rgba(166,166,166,0.82);
 }
 .weather-card__content-temperature {
   font-size: 290%;
@@ -24,12 +33,15 @@ img{
   width: 40%;
 }
 .btn{
-  background-color: #88c5cc !important;
-  border: 1px solid white !important;
-  font-weight: lighter !important;
+  color: black !important;
+  background-color: white !important;
+  border: 2px solid black !important;
+  font-weight: bold !important;
+  transition-duration: 0.5s;
 }
 .btn:hover{
-  border: 1px solid #88c5cc !important;
+  border: 2px solid #d0def3 !important;
+  color: #d0def3 !important;
 }
 .weather-card__details {
   font-size: 65%;
