@@ -4,13 +4,16 @@ body {
   overflow-x: hidden;
   background: #e0eafc !important;
 }
+.weather-container {
+  padding: 0 !important;
+  margin: auto !important;
+}
 .weather-card {
   text-align: center;
   border: 0.5px solid #cfdef3;
   border-radius: 5px;
   padding: 8%;
   margin: 10% 0;
-  /* background-color: #88c5cc; */
   background-color: white;
   color: black;
   overflow: hidden;
