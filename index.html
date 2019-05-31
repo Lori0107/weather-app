@@ -77,16 +77,14 @@
             <div class="" ng-show="icon == '50n'">
               <img src="./img/fog.png" alt="">
             </div>
-            <p><button class="btn btn-danger weather-card__btn" type="buttton" data-toggle="collapse" href="#details" aria-expanded="true" aria-controls="details">more details</button></p>
-            <div class="weather-card__details" id="details">
+            <p><button class="btn btn-danger weather-card__btn" type="buttton" data-toggle="collapse" href="#details" aria-expanded="false" aria-controls="details">more details</button></p>
+            <div class="weather-card__details collapse" id="details">
               <p class="weather-card__content"><span class="weather-card__content__font">Highest temperature</span><br>
                  {{temperatureHigh| number: 0}}°</p>
               <p class="weather-card__content"><span class="weather-card__content__font">Lowest temperature</span><br>
                  {{temperatureLow| number: 0}}°</p>
               <p class="weather-card__content"><span class="weather-card__content__font">Indice of humidity</span><br>
                  {{humidity}}%</p>
-              <p class="weather-card__content"><span class="weather-card__content__font">Indice of precipitation</span><br>
-                 {{precipitation}}%</p>
               <p class="weather-card__content"><span class="weather-card__content__font">Wind speed</span><br>
                  {{windSpeed}} km/h</p>
             </div>
