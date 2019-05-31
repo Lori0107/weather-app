@@ -32,7 +32,7 @@ function addZero(i) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    $http.get('https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=metric&APPID=d075bfff2f9c02161dc50bc3cd404842')
+    $http.get('httpss://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=metric&APPID=d075bfff2f9c02161dc50bc3cd404842')
     .then(function (res, err) {
       if(res) {
         console.log(res)
